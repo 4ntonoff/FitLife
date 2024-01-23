@@ -7,10 +7,10 @@ import {
   Animated,
   Alert,
 } from "react-native";
-import slides from "./slides";
+import slides from "../data/slides";
 import OnboardingItem from "./Onboardingitem";
-import Paginator from "./Paginator";
-import NextButton from "./NextButtons";
+import Paginator from "../services/Paginator";
+import NextButton from "../services/NextButtons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 

@@ -28,7 +28,7 @@ export default function App() {
   const [checkedStatus, setCheckedStatus] = useState(
     Array.from({ length: 7 }, () => false)
   );
-  const [warnText, setWarnText] = useState(""); // Declare warnText as a state variable
+  const [warnText, setWarnText] = useState("");
 
   const handleToggle = (index) => {
     const newCheckedStatus = [...checkedStatus];

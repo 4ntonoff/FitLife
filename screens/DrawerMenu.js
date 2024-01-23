@@ -1,10 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React, { useRef } from "react";
 import { auth } from "../config/firebase";
 import { getDatabase, ref, set, onValue } from "firebase/database";
@@ -62,7 +55,8 @@ export default function App({ navigation }) {
   const motivation = "Sweat, achieve, repeat!";
   const date = new Date();
   const day = date.getDate();
-  let month = date.getMonth() + 1; // getMonth() returns a zero-based index, so we need to add 1 to get the actual month number
+  // getMonth() returns a zero-based index, so we need to add 1 to get the actual month number
+  let month = date.getMonth() + 1; 
   switch (month) {
     case 1:
       month = "January";
@@ -104,7 +98,6 @@ export default function App({ navigation }) {
       month = "Invalid month";
   }
   const [currentTab, setCurrentTab] = useState("Home");
-  //time
   const currentHour = new Date().getHours();
   let greetingMessage;
 
@@ -136,10 +129,10 @@ export default function App({ navigation }) {
 
   console.log(selectedMode);
   console.log(selectedLevel);
-  //Animatia
+  // Animation
   const [showMenu, setShowMenu] = React.useState(false);
   const offsetValue = useRef(new Animated.Value(0)).current;
-  //prima valoare trebuie sa fie 1
+  // First value must be 1
   const scaleValue = useRef(new Animated.Value(1)).current;
   const Stack = createNativeStackNavigator();
 
@@ -319,7 +312,7 @@ export default function App({ navigation }) {
       </View>
 
       {
-        // overlay viewf
+        // Overlay view
       }
       <Animated.View
         style={{
@@ -332,7 +325,6 @@ export default function App({ navigation }) {
           right: 0,
           paddingVertical: 0,
           borderRadius: showMenu ? 25 : 0,
-          //transforming view
           transform: [
             {
               scale: scaleValue,
@@ -344,7 +336,7 @@ export default function App({ navigation }) {
         }}
       >
         {
-          //menu button
+          // Menu button
         }
         <TouchableOpacity
           onPress={() => {
@@ -359,8 +351,7 @@ export default function App({ navigation }) {
               duration: 300,
               useNativeDriver: true,
             }).start();
-
-            setShowMenu(!showMenu); //zamarocika asta pentru click
+            setShowMenu(!showMenu);
           }}
         >
           <Image
@@ -596,7 +587,7 @@ export default function App({ navigation }) {
   );
 }
 
-//for multiple buttons
+// For multiple buttons
 
 const TabButton = (
   currentTab,
@@ -705,7 +696,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 
-  //Home part
+  // Home part
   container: {
     flex: 1,
     width: "90%",

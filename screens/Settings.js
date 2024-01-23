@@ -124,12 +124,12 @@ const Settings = () => {
   
   
 
-  //Selected buttn
+  // Selected button
   () => setSelectedButton("lvl1");
   console.log(selectedButtonLvl);
   console.log(selectedButtonMode);
 
-  //Difficulty info
+  // Difficulty info
   let lvlDescription = "";
   if (selectedButtonLvl === "lvl1") {
     lvlDescription =

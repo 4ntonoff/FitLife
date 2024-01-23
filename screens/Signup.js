@@ -41,12 +41,12 @@ export default function Login({ navigation }) {
     if (email !== "" && password !== "" && username !== "") {
       createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
+
           // Get the unique user ID from the userCredential object
           const userId = userCredential.user.uid;
           userIdRef.current = userId;
 
           // Store the username in Firebase
-
           set(ref(database, `users/` + userId), {
             username: username,
             email: email,
@@ -96,7 +96,9 @@ export default function Login({ navigation }) {
       if (!result.cancelled) {
         const selectedImage = result.uri;
         if (selectedImage) {
-          setImage(selectedImage); // Set the selected image URI in the state
+
+          // Set the selected image URI in the state
+          setImage(selectedImage);
           const uploadURL = await uploadImageAsync(selectedImage);
           addProfilePhoto(uploadURL);
         } else {
@@ -113,6 +115,7 @@ export default function Login({ navigation }) {
   const addProfilePhoto = async (imageUrl) => {
     try {
       if (imageUrl) {
+
         // Store the image URL in Firebase
         const userId = userIdRef.current;
         if (!userId) return;
@@ -131,8 +134,6 @@ export default function Login({ navigation }) {
       console.log("Error @addProfilePhoto: ", error);
     }
   };
-
-  // Rest of the code...
 
   const uploadImageAsync = async (uri) => {
     if (!uri) {
@@ -158,12 +159,13 @@ export default function Login({ navigation }) {
   useEffect(() => {
     const retrieveImage = async () => {
       try {
+
         // Retrieve the userId from the userIdRef
         const userId = userIdRef.current;
         if (!userId) return;
 
         const snapshot = await get(ref(database, `users/` + userId));
-        // Rest of the code...
+        
       } catch (error) {
         console.log("Error retrieving image URL: ", error);
       }

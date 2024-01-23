@@ -27,7 +27,6 @@ const imageHeigh = scaleHeight({
   desiredWidth: imageWidth,
 });
 const ExercisesProgress = ({ navigation }) => {
-  const progress = 0.51;
   return (
     <View style={styles.container}>
       <View>
@@ -59,41 +58,6 @@ const ExercisesProgress = ({ navigation }) => {
         </TouchableOpacity>
       </View>
       <ScrollView style={styles.whiteSheet}>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
-        <Text>fasdf</Text>
       </ScrollView>
     </View>
   );

@@ -22,7 +22,8 @@ export default function Home({ navigation }) {
   const [selectedLevel, setSelectedLevel] = useState("");
   const date = new Date();
   const day = date.getDate();
-  let month = date.getMonth() + 1; // getMonth() returns a zero-based index, so we need to add 1 to get the actual month number
+  // getMonth() returns a zero-based index, so we need to add 1 to get the actual month number
+  let month = date.getMonth() + 1; 
   switch (month) {
     case 1:
       month = "January";
@@ -63,18 +64,20 @@ export default function Home({ navigation }) {
     default:
       month = "Invalid month";
   }
-  //time
+  // Time
   const currentHour = new Date().getHours();
   let greetingMessage;
 
-  if (currentHour >= 5 && currentHour < 12) {
-    greetingMessage = "Good Morning";
-  } else if (currentHour >= 12 && currentHour < 18) {
-    greetingMessage = "Good Afternoon";
-  } else {
-    greetingMessage = "Good Evening";
+  switch (true) {
+    case currentHour >= 5 && currentHour < 12:
+      greetingMessage = "Good Morning";
+      break;
+    case currentHour >= 12 && currentHour < 18:
+      greetingMessage = "Good Afternoon";
+      break;
+    default:
+      greetingMessage = "Good Evening";
   }
-  //username
 
   useEffect(() => {
     const retrieveData = async () => {
@@ -95,8 +98,8 @@ export default function Home({ navigation }) {
     retrieveData();
   }, []);
 
-  console.log(selectedMode);
-  console.log(selectedLevel);
+  console.log('SelectedMode = ' + selectedMode);
+  console.log('SelectedLevel = ' + selectedLevel);
   switch (selectedLevel) {
     case "lvl1":
       level = "Beginner";
